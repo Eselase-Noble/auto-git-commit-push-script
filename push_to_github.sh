@@ -25,6 +25,7 @@ SEARCH_DIRS=(
    "/home/nobleson/Nobleson"
   "/home/nobleson/SENDIT-GH"
   "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
+  "/home/nobleson/Scripts"
 )
 
 echo "=== Starting Auto Push Script ==="

@@ -8,6 +8,7 @@ SEARCH_DIRS=(
     "/home/nobleson/SENDIT-GH"
     "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
     "/home/nobleson/Projects/PERSONAL/AI"
+    "/home/nobleson/Scripts"
 )
 
 # Commit message with current date and time
