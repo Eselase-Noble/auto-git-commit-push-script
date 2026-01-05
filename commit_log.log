@@ -30002,3 +30002,147 @@ Searching in: /home/nobleson/Projects/PERSONAL/AI
 ----------------------------------------------------
 Searching in: /home/nobleson/Scripts
 → Processing Git repository in: /home/nobleson/Scripts/Github-Actions
+[production e46e7b0] Auto Commit: 2026-01-05 10:30:01
+ 2 files changed, 144 insertions(+)
+✅ Changes committed in /home/nobleson/Scripts/Github-Actions
+----------------------------------------------------
+🎉 All done!
+Starting auto-commit process...
+Commit message: Auto Commit: 2026-01-05 11:00:01
+----------------------------------------------------
+Searching in: /home/nobleson/GLNS/PROJECTS
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/gnls-report-system
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/gnls-report-system
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/IP_ADDRESS_MANAGEMENT_SYSTEM
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/IP_ADDRESS_MANAGEMENT_SYSTEM
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/ipams
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/ipams
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/ipams_ui
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/ipams_ui
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/phpipam
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/phpipam
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/PERSONAL
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/CryptoStockStreamer
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/CryptoStockStreamer
+----------------------------------------------------
+Searching in: /home/nobleson/Nobleson
+→ Processing Git repository in: /home/nobleson/Nobleson/nobleson-portfolio
+🟡 No changes detected in /home/nobleson/Nobleson/nobleson-portfolio
+----------------------------------------------------
+Searching in: /home/nobleson/SENDIT-GH
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-api-gateway
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-api-gateway
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-authentication-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-authentication-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-authorization-server
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-authorization-server
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-config-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-config-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-delivery-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-delivery-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-discovery-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-discovery-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-event-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-event-service
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/STARTUPS/AfrikodeLab
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/AfrikodeLab/afrikodeLab-pm
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/AfrikodeLab/afrikodeLab-pm
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/AfrikodeLab/terminalX
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/AfrikodeLab/terminalX
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/PERSONAL/AI
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/Fraud_Detector
+[main (root-commit) 3601bab] Auto Commit: 2026-01-05 11:00:01
+ 69 files changed, 11356 insertions(+)
+ create mode 100644 .env.example
+ create mode 100644 .gitignore
+ create mode 100644 app/config.py
+ create mode 100644 app/database.py
+ create mode 100644 app/external.py
+ create mode 100644 app/fraud_detector.py
+ create mode 100644 app/main.py
+ create mode 100644 app/models.py
+ create mode 100644 app/routers/admin.py
+ create mode 100644 app/routers/analytics.py
+ create mode 100644 app/routers/docs.py
+ create mode 100644 app/routers/transactions.py
+ create mode 100644 app/routers/users.py
+ create mode 100644 app/vector_store.py
+ create mode 100644 data/fraud_docs/aml_red_flags.txt
+ create mode 100644 data/fraud_docs/card_testing.txt
+ create mode 100644 data/fraud_docs/csv/aml_thresholds.csv
+ create mode 100644 data/fraud_docs/csv/country_risk_scores.csv
+ create mode 100644 data/fraud_docs/csv/high_risk_merchants.csv
+ create mode 100644 data/fraud_docs/csv/mcc_codes.csv
+ create mode 100644 data/fraud_docs/csv/transactions_10000.csv
+ create mode 100644 data/fraud_docs/geo_anomaly.txt
+ create mode 100644 data/fraud_docs/json/risk_data.json
+ create mode 100644 data/fraud_docs/json/transactions.json
+ create mode 100644 data/fraud_docs/merchant_risk.txt
+ create mode 100644 data/fraud_docs/pdf/fatf_guidance.pdf
+ create mode 100644 data/fraud_docs/pdf/fraud_whitepaper_2025.pdf
+ create mode 100644 data/fraud_docs/pdf/pci_dss_guidelines.pdf
+ create mode 100644 data/fraud_docs/stolen_cards.txt
+ create mode 100644 data/fraud_docs/txt/aml_red_flags.txt
+ create mode 100644 data/fraud_docs/txt/card_testing.txt
+ create mode 100644 data/fraud_docs/txt/case_studies_capitalone.txt
+ create mode 100644 data/fraud_docs/txt/case_studies_target.txt
+ create mode 100644 data/fraud_docs/txt/geo_anomaly.txt
+ create mode 100644 data/fraud_docs/txt/merchant_risk.txt
+ create mode 100644 data/fraud_docs/txt/public_advisories.txt
+ create mode 100644 data/fraud_docs/txt/stolen_cards.txt
+ create mode 100644 data/fraud_docs/txt/velocity_fraud.txt
+ create mode 100644 data/fraud_docs/velocity_fraud.txt
+ create mode 100644 fraud_rag_dataset.zip
+ create mode 100644 fraud_rag_dataset/fraud_docs/aml_red_flags.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/card_testing.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/csv/aml_thresholds.csv
+ create mode 100644 fraud_rag_dataset/fraud_docs/csv/country_risk_scores.csv
+ create mode 100644 fraud_rag_dataset/fraud_docs/csv/high_risk_merchants.csv
+ create mode 100644 fraud_rag_dataset/fraud_docs/csv/mcc_codes.csv
+ create mode 100644 fraud_rag_dataset/fraud_docs/geo_anomaly.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/json/risk_data.json
+ create mode 100644 fraud_rag_dataset/fraud_docs/json/transactions.json
+ create mode 100644 fraud_rag_dataset/fraud_docs/merchant_risk.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/pdf/fatf_guidance.pdf
+ create mode 100644 fraud_rag_dataset/fraud_docs/pdf/fraud_whitepaper_2025.pdf
+ create mode 100644 fraud_rag_dataset/fraud_docs/pdf/pci_dss_guidelines.pdf
+ create mode 100644 fraud_rag_dataset/fraud_docs/stolen_cards.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/aml_red_flags.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/card_testing.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/case_studies_capitalone.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/case_studies_target.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/geo_anomaly.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/merchant_risk.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/public_advisories.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/stolen_cards.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/txt/velocity_fraud.txt
+ create mode 100644 fraud_rag_dataset/fraud_docs/velocity_fraud.txt
+ create mode 100644 generate_rag_dataset.py
+ create mode 100644 generate_transaction_data.py
+ create mode 100644 sql/schema.sql
+ create mode 100644 sql/seed.sql
+ create mode 100644 sync_data_with_db.py
+✅ Changes committed in /home/nobleson/Projects/PERSONAL/AI/Fraud_Detector
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/intellifraud-copilot
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/intellifraud-copilot
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/multi-agent-sfraud-detector
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/multi-agent-sfraud-detector
+----------------------------------------------------
+Searching in: /home/nobleson/Scripts
+→ Processing Git repository in: /home/nobleson/Scripts/Github-Actions
