@@ -34757,3 +34757,252 @@ Searching in: /home/nobleson/Projects/PERSONAL/AI
 ----------------------------------------------------
 Searching in: /home/nobleson/Scripts
 → Processing Git repository in: /home/nobleson/Scripts/Github-Actions
+[production cc52ff9] Auto Commit: 2026-01-06 20:00:01
+ 2 files changed, 82 insertions(+)
+✅ Changes committed in /home/nobleson/Scripts/Github-Actions
+----------------------------------------------------
+🎉 All done!
+Starting auto-commit process...
+Commit message: Auto Commit: 2026-01-06 20:30:01
+----------------------------------------------------
+Searching in: /home/nobleson/GLNS/PROJECTS
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/gnls-report-system
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/gnls-report-system
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/IP_ADDRESS_MANAGEMENT_SYSTEM
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/IP_ADDRESS_MANAGEMENT_SYSTEM
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/ipams
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/ipams
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/ipams_ui
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/ipams_ui
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/phpipam
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/phpipam
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/PERSONAL
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/CryptoStockStreamer
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/CryptoStockStreamer
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/youtube-research-assistant
+[main (root-commit) 435f3bc] Auto Commit: 2026-01-06 20:30:01
+ 168 files changed, 460604 insertions(+)
+ create mode 100644 .idea/.gitignore
+ create mode 100644 .idea/modules.xml
+ create mode 100644 .idea/vcs.xml
+ create mode 100644 .idea/youtube-research-assistant.iml
+ create mode 100644 dist/background/serviceWorker.js
+ create mode 100644 dist/content/youtubeContentScript.js
+ create mode 100644 dist/ui/panel.js
+ create mode 100644 manifest.json
+ create mode 120000 node_modules/.bin/tsc
+ create mode 120000 node_modules/.bin/tsserver
+ create mode 100644 node_modules/.package-lock.json
+ create mode 100644 node_modules/@types/chrome/LICENSE
+ create mode 100644 node_modules/@types/chrome/README.md
+ create mode 100644 node_modules/@types/chrome/chrome-cast/index.d.ts
+ create mode 100644 node_modules/@types/chrome/har-format/index.d.ts
+ create mode 100644 node_modules/@types/chrome/index.d.ts
+ create mode 100644 node_modules/@types/chrome/package.json
+ create mode 100644 node_modules/@types/filesystem/LICENSE
+ create mode 100644 node_modules/@types/filesystem/README.md
+ create mode 100644 node_modules/@types/filesystem/index.d.ts
+ create mode 100644 node_modules/@types/filesystem/package.json
+ create mode 100644 node_modules/@types/filewriter/LICENSE
+ create mode 100644 node_modules/@types/filewriter/README.md
+ create mode 100644 node_modules/@types/filewriter/index.d.ts
+ create mode 100644 node_modules/@types/filewriter/package.json
+ create mode 100644 node_modules/@types/har-format/LICENSE
+ create mode 100644 node_modules/@types/har-format/README.md
+ create mode 100644 node_modules/@types/har-format/index.d.ts
+ create mode 100644 node_modules/@types/har-format/package.json
+ create mode 100644 node_modules/typescript/LICENSE.txt
+ create mode 100644 node_modules/typescript/README.md
+ create mode 100644 node_modules/typescript/SECURITY.md
+ create mode 100644 node_modules/typescript/ThirdPartyNoticeText.txt
+ create mode 100755 node_modules/typescript/bin/tsc
+ create mode 100755 node_modules/typescript/bin/tsserver
+ create mode 100644 node_modules/typescript/lib/_tsc.js
+ create mode 100644 node_modules/typescript/lib/_tsserver.js
+ create mode 100644 node_modules/typescript/lib/_typingsInstaller.js
+ create mode 100644 node_modules/typescript/lib/cs/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/de/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/es/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/fr/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/it/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/ja/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/ko/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/lib.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.decorators.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.decorators.legacy.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.dom.asynciterable.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.dom.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.dom.iterable.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.collection.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.core.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.generator.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.iterable.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.promise.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.proxy.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.reflect.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.symbol.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2016.array.include.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2016.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2016.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2016.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.arraybuffer.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.date.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.object.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.string.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2017.typedarrays.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2018.asynciterable.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2018.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2018.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2018.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2018.promise.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2018.regexp.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2019.array.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2019.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2019.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2019.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2019.object.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2019.string.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2019.symbol.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.bigint.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.date.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.number.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.promise.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.string.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2021.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2021.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2021.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2021.promise.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2021.string.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2021.weakref.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2022.array.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2022.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2022.error.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2022.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2022.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2022.object.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2022.regexp.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2022.string.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2023.array.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2023.collection.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2023.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2023.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2023.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.arraybuffer.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.collection.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.object.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.promise.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.regexp.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.sharedmemory.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es2024.string.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es5.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.es6.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.array.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.collection.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.decorators.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.disposable.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.error.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.float16.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.full.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.intl.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.iterator.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.promise.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.esnext.sharedmemory.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.scripthost.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.webworker.asynciterable.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.webworker.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.webworker.importscripts.d.ts
+ create mode 100644 node_modules/typescript/lib/lib.webworker.iterable.d.ts
+ create mode 100644 node_modules/typescript/lib/pl/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/pt-br/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/ru/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/tr/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/tsc.js
+ create mode 100644 node_modules/typescript/lib/tsserver.js
+ create mode 100644 node_modules/typescript/lib/tsserverlibrary.d.ts
+ create mode 100644 node_modules/typescript/lib/tsserverlibrary.js
+ create mode 100644 node_modules/typescript/lib/typesMap.json
+ create mode 100644 node_modules/typescript/lib/typescript.d.ts
+ create mode 100644 node_modules/typescript/lib/typescript.js
+ create mode 100644 node_modules/typescript/lib/typingsInstaller.js
+ create mode 100644 node_modules/typescript/lib/watchGuard.js
+ create mode 100644 node_modules/typescript/lib/zh-cn/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/lib/zh-tw/diagnosticMessages.generated.json
+ create mode 100644 node_modules/typescript/package.json
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 src/background/serviceWorker.ts
+ create mode 100644 src/content/youtubeContentScript.ts
+ create mode 100644 src/ui/panel.css
+ create mode 100644 src/ui/panel.ts
+ create mode 100644 tsconfig.json
+✅ Changes committed in /home/nobleson/Projects/PERSONAL/youtube-research-assistant
+----------------------------------------------------
+Searching in: /home/nobleson/Nobleson
+→ Processing Git repository in: /home/nobleson/Nobleson/nobleson-portfolio
+🟡 No changes detected in /home/nobleson/Nobleson/nobleson-portfolio
+----------------------------------------------------
+Searching in: /home/nobleson/SENDIT-GH
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-api-gateway
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-api-gateway
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-authentication-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-authentication-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-authorization-server
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-authorization-server
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-config-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-config-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-delivery-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-delivery-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-discovery-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-discovery-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-event-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-event-service
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/STARTUPS/AfrikodeLab
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/AfrikodeLab/afrikodeLab-pm
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/AfrikodeLab/afrikodeLab-pm
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/AfrikodeLab/terminalX
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/AfrikodeLab/terminalX
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/PERSONAL/AI
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/Fraud_Detector
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/Fraud_Detector
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/fraud_detector_ui
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/fraud_detector_ui
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/intellifraud-copilot
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/intellifraud-copilot
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/multi-agent-sfraud-detector
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/multi-agent-sfraud-detector
+----------------------------------------------------
+Searching in: /home/nobleson/Scripts
+→ Processing Git repository in: /home/nobleson/Scripts/Github-Actions
