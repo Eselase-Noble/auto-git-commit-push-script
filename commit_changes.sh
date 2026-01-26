@@ -3,6 +3,7 @@
 # Directories to search for git repositories
 SEARCH_DIRS=(
     "/home/nobleson/GLNS/PROJECTS"
+    "/home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native/nearfix-mobile"
     "/home/nobleson/Projects/PERSONAL"
     "/home/nobleson/Nobleson"
     "/home/nobleson/SENDIT-GH"

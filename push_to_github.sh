@@ -20,12 +20,14 @@ export GIT_SSH_COMMAND="ssh -i /home/nobleson/.ssh/id_rsa_auto -o IdentitiesOnly
 # === Directories to search for git repositories ===
 SEARCH_DIRS=(
   "/home/nobleson/GLNS/PROJECTS"
+  "/home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native/nearfix-mobile"
   "/home/nobleson/Projects/PERSONAL"
   "/home/nobleson/Projects/PERSONAL/AI"
    "/home/nobleson/Nobleson"
   "/home/nobleson/SENDIT-GH"
   "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
   "/home/nobleson/Scripts"
+
 )
 
 echo "=== Starting Auto Push Script ==="
