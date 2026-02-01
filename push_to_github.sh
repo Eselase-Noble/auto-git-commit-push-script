@@ -23,6 +23,7 @@ SEARCH_DIRS=(
   "/home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native/nearfix-mobile"
   "/home/nobleson/Projects/PERSONAL"
   "/home/nobleson/Projects/PERSONAL/AI"
+  "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system"
    "/home/nobleson/Nobleson"
   "/home/nobleson/SENDIT-GH"
   "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
