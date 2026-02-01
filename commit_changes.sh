@@ -9,7 +9,8 @@ SEARCH_DIRS=(
     "/home/nobleson/SENDIT-GH"
     "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
     "/home/nobleson/Projects/PERSONAL/AI"
-    "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system"
+    "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system/audio-transcription-frontend"
+    "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system/transcription-backend"
     "/home/nobleson/Scripts"
 )
 
