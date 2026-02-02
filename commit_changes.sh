@@ -10,7 +10,6 @@ SEARCH_DIRS=(
     "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
     "/home/nobleson/Projects/PERSONAL/AI"
     "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system"
-    "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system/transcription-backend"
     "/home/nobleson/Scripts"
 )
 
