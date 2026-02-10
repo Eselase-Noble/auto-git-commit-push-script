@@ -21,6 +21,7 @@ export GIT_SSH_COMMAND="ssh -i /home/nobleson/.ssh/id_rsa_auto -o IdentitiesOnly
 SEARCH_DIRS=(
   "/home/nobleson/GLNS/PROJECTS"
   "/home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native/nearfix-mobile"
+  "/home/nobleson/Projects/STARTUPS/Frontends"
   "/home/nobleson/Projects/PERSONAL"
   "/home/nobleson/Projects/PERSONAL/AI"
   "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system"
