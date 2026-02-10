@@ -5,6 +5,7 @@ SEARCH_DIRS=(
     "/home/nobleson/GLNS/PROJECTS"
     "/home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native"
     "/home/nobleson/Projects/STARTUPS/Frontends"
+    "/home/nobleson/Projects/STARTUPS/Backends"
     "/home/nobleson/Projects/PERSONAL"
     "/home/nobleson/Nobleson"
     "/home/nobleson/SENDIT-GH"
