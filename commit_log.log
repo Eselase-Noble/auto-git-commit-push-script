@@ -185276,3 +185276,158 @@ Searching in: /home/nobleson/Projects/PERSONAL/AI/audio-transcription-system
 ----------------------------------------------------
 Searching in: /home/nobleson/Scripts
 → Processing Git repository in: /home/nobleson/Scripts/Github-Actions
+[production 27d07a4] Auto Commit: 2026-03-12 00:30:01
+ 2 files changed, 262 insertions(+)
+✅ Changes committed in /home/nobleson/Scripts/Github-Actions
+----------------------------------------------------
+🎉 All done!
+Starting auto-commit process...
+Commit message: Auto Commit: 2026-03-12 01:00:01
+----------------------------------------------------
+Searching in: /home/nobleson/GLNS/PROJECTS
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/batch-processing
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/batch-processing
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/gnls-report-system
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/gnls-report-system
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/IP_ADDRESS_MANAGEMENT_SYSTEM
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/IP_ADDRESS_MANAGEMENT_SYSTEM
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/ipams
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/ipams
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/ipams_ui
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/ipams_ui
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/GLNS/PROJECTS/phpipam
+🟡 No changes detected in /home/nobleson/GLNS/PROJECTS/phpipam
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native/nearfix-mobile
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native/nearfix-mobile
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/STARTUPS/Frontends
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Frontends/gh-property
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/Frontends/gh-property
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Frontends/payment-voucher-frontend
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/Frontends/payment-voucher-frontend
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Frontends/payroll-system
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/Frontends/payroll-system
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Frontends/veriflex
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/Frontends/veriflex
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Frontends/veriflex-payroll-system
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/Frontends/veriflex-payroll-system
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/STARTUPS/Backends
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Backends/assignment-platform
+[main c2f7e78] Auto Commit: 2026-03-12 01:00:01
+ 23 files changed, 1543 insertions(+)
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/api/controller/CourseController.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/api/controller/SubmissionController.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/api/dto/ApiResponse.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/api/dto/CourseDto.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/api/dto/SubmissionDto.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/api/exception/GlobalExceptionHandler.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/config/AppConfig.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/domain/entity/Assignment.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/domain/entity/Course.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/domain/entity/Submission.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/domain/entity/SubmissionFile.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/domain/repository/AssignmentRepository.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/domain/repository/CourseRepository.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/domain/repository/SubmissionRepository.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/exception/BusinessException.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/exception/FileUploadException.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/exception/FileValidationException.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/exception/ResourceNotFoundException.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/service/EmailService.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/service/FileValidationService.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/service/StorageService.java
+ create mode 100644 src/main/java/com/nobleson/assignmentplatform/service/SubmissionService.java
+✅ Changes committed in /home/nobleson/Projects/STARTUPS/Backends/assignment-platform
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Backends/payment-voucher-backend
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/Backends/payment-voucher-backend
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/Backends/veriflex-payroll
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/Backends/veriflex-payroll
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/PERSONAL
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/CryptoStockStreamer
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/CryptoStockStreamer
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/Test
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/Test
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/youtube-research-assistant
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/youtube-research-assistant
+----------------------------------------------------
+Searching in: /home/nobleson/Nobleson
+→ Processing Git repository in: /home/nobleson/Nobleson/nobleson-portfolio
+🟡 No changes detected in /home/nobleson/Nobleson/nobleson-portfolio
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Nobleson/postmaster-backend-full
+🟡 No changes detected in /home/nobleson/Nobleson/postmaster-backend-full
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Nobleson/web-based-dev-platform-backend
+🟡 No changes detected in /home/nobleson/Nobleson/web-based-dev-platform-backend
+----------------------------------------------------
+Searching in: /home/nobleson/SENDIT-GH
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-api-gateway
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-api-gateway
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-authentication-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-authentication-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-authorization-server
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-authorization-server
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-config-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-config-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-delivery-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-delivery-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-discovery-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-discovery-service
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/SENDIT-GH/sendit-event-service
+🟡 No changes detected in /home/nobleson/SENDIT-GH/sendit-event-service
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/STARTUPS/AfrikodeLab
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/AfrikodeLab/afrikodeLab-pm
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/AfrikodeLab/afrikodeLab-pm
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/AfrikodeLab/postmaster_ui
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/AfrikodeLab/postmaster_ui
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/STARTUPS/AfrikodeLab/terminalX
+🟡 No changes detected in /home/nobleson/Projects/STARTUPS/AfrikodeLab/terminalX
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/PERSONAL/AI
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/Fraud_Detector
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/Fraud_Detector
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/fraud_detector_ui
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/fraud_detector_ui
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/intellifraud-copilot
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/intellifraud-copilot
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/multi-agent-sfraud-detector
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/multi-agent-sfraud-detector
+----------------------------------------------------
+Searching in: /home/nobleson/Projects/PERSONAL/AI/audio-transcription-system
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/audio-transcription-system/audio-transcription-frontend
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/audio-transcription-system/audio-transcription-frontend
+----------------------------------------------------
+→ Processing Git repository in: /home/nobleson/Projects/PERSONAL/AI/audio-transcription-system/transcription-backend
+🟡 No changes detected in /home/nobleson/Projects/PERSONAL/AI/audio-transcription-system/transcription-backend
+----------------------------------------------------
+Searching in: /home/nobleson/Scripts
+→ Processing Git repository in: /home/nobleson/Scripts/Github-Actions
