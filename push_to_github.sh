@@ -23,12 +23,16 @@ SEARCH_DIRS=(
   "/home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native/nearfix-mobile"
   "/home/nobleson/Projects/STARTUPS/Frontends"
   "/home/nobleson/Projects/STARTUPS/Backends"
+  "/home/nobleson/Projects/STARTUPS"
+  "/home/nobleson/Projects/STARTUPS/Assignment-Platform"
+  "/home/nobleson/Projects/STARTUPS/payment-voucher"
   "/home/nobleson/Projects/PERSONAL"
   "/home/nobleson/Projects/PERSONAL/AI"
   "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system"
    "/home/nobleson/Nobleson"
   "/home/nobleson/SENDIT-GH"
   "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
+  "/home/nobleson/Projects/STARTUPS/AfrikodeLab/ERP-BACKEND"
   "/home/nobleson/Scripts"
 
 )
