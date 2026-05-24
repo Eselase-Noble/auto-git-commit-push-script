@@ -8,6 +8,7 @@ SEARCH_DIRS=(
     "/home/nobleson/Projects/STARTUPS/Backends"
     "/home/nobleson/Projects/STARTUPS/Assignment-Platform"
     "/home/nobleson/Projects/STARTUPS/payment-voucher"
+    "/home/nobleson/Projects/STARTUPS/postmaster"
     "/home/nobleson/Projects/STARTUPS/"
     "/home/nobleson/Projects/PERSONAL"
     "/home/nobleson/Nobleson"
