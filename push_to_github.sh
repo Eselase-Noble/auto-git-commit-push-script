@@ -26,6 +26,8 @@ SEARCH_DIRS=(
   "/home/nobleson/Projects/STARTUPS"
   "/home/nobleson/Projects/STARTUPS/Assignment-Platform"
   "/home/nobleson/Projects/STARTUPS/payment-voucher"
+  "/home/nobleson/Projects/STARTUPS/postmaster"
+  "/home/nobleson/Projects/STARTUPS/remote_web_based_ide"
   "/home/nobleson/Projects/PERSONAL"
   "/home/nobleson/Projects/PERSONAL/AI"
   "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system"
