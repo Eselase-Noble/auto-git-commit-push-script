@@ -11,9 +11,12 @@
         <string>/Users/macbookpro/Projects/auto-git-commit-push-script/commit_changes.sh</string>
     </array>
 
-    <!-- Every 30 minutes -->
-    <key>StartInterval</key>
-    <integer>1800</integer>
+    <!-- Every 30 minutes, on the clock (:00 and :30) -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Minute</key><integer>30</integer></dict>
+    </array>
 
     <!-- Also run once shortly after login/load -->
     <key>RunAtLoad</key>

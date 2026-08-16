@@ -11,9 +11,11 @@
         <string>/Users/macbookpro/Projects/auto-git-commit-push-script/push_to_github.sh</string>
     </array>
 
-    <!-- Every 1 hour -->
-    <key>StartInterval</key>
-    <integer>3600</integer>
+    <!-- Every 1 hour, at :15 past (offset from the :00/:30 commit run) -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Minute</key><integer>15</integer></dict>
+    </array>
 
     <!-- Also run once shortly after login/load -->
     <key>RunAtLoad</key>
