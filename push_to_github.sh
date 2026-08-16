@@ -1,84 +1,65 @@
 #!/bin/bash
+#
+# Auto-push script (macOS).
+# Discovers every git repo under $ROOT and pushes the CURRENT branch to origin.
+# Authentication uses the macOS keychain via git's osxkeychain credential helper
+# (already configured system-wide), so no SSH key is needed for HTTPS remotes.
+# Intended to be run on a schedule by launchd (see LaunchAgents/).
 
-# === Environment setup for cron ===
-export HOME=/home/nobleson
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# --- Environment (launchd runs with a minimal PATH) ---
+export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
-# Load user shell environment (if it exists)
-[ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
-[ -f "$HOME/.profile" ] && source "$HOME/.profile"
+# Root under which to search for git repositories (override with AUTOGIT_ROOT).
+ROOT="${AUTOGIT_ROOT:-$HOME/Projects}"
 
-# --- Option 1: Use SSH agent if available ---
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    # Try to attach to an existing ssh-agent socket
-    export SSH_AUTH_SOCK=$(ls /tmp/ssh-*/agent.* 2>/dev/null | head -n 1)
-fi
+# Log file lives OUTSIDE the scanned repos so we never commit our own logs.
+LOG_DIR="$HOME/Library/Logs/auto-git"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/push.log"
+exec >>"$LOG_FILE" 2>&1
 
-# --- Option 2: Use a specific SSH key (works even without agent) ---
-export GIT_SSH_COMMAND="ssh -i /home/nobleson/.ssh/id_rsa_auto -o IdentitiesOnly=yes"
-
-# === Directories to search for git repositories ===
-SEARCH_DIRS=(
-  "/home/nobleson/GLNS/PROJECTS"
-  "/home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native/nearfix-mobile"
-  "/home/nobleson/Projects/STARTUPS/Frontends"
-  "/home/nobleson/Projects/STARTUPS/Backends"
-  "/home/nobleson/Projects/STARTUPS"
-  "/home/nobleson/Projects/STARTUPS/Assignment-Platform"
-  "/home/nobleson/Projects/STARTUPS/payment-voucher"
-  "/home/nobleson/Projects/STARTUPS/postmaster"
-  "/home/nobleson/Projects/STARTUPS/remote_web_based_ide"
-  "/home/nobleson/Projects/PERSONAL"
-  "/home/nobleson/Projects/PERSONAL/AI"
-  "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system"
-   "/home/nobleson/Nobleson"
-  "/home/nobleson/SENDIT-GH"
-  "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
-  "/home/nobleson/Projects/STARTUPS/AfrikodeLab/ERP-BACKEND"
-  "/home/nobleson/Scripts"
-
-)
-
-echo "=== Starting Auto Push Script ==="
-echo "Timestamp: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "===================================================="
+echo "=== Starting auto-push at $(date '+%Y-%m-%d %H:%M:%S') ==="
+echo "Root: $ROOT"
 echo "----------------------------------------------------"
 
-# === Main Loop ===
-for BASE_DIR in "${SEARCH_DIRS[@]}"; do
-  echo "Searching in: $BASE_DIR"
-  echo "----------------------------------------------------"
+find "$ROOT" -type d \( \
+      -name node_modules -o -name vendor -o -name Pods -o -name .venv \
+      -o -name venv -o -name .tox -o -name DerivedData -o -name .next \
+      -o -name build -o -name dist \
+    \) -prune -o -type d -name .git -print 2>/dev/null | while IFS= read -r gitdir; do
 
-  # Loop through subdirectories
-  for dir in "$BASE_DIR"/*; do
-    if [ -d "$dir/.git" ]; then
-      echo "→ Processing Git repository in: $dir"
-      cd "$dir" || continue
+  repo="$(dirname "$gitdir")"
+  cd "$repo" || continue
 
-      # Check that a valid GitHub remote exists
-      if git remote -v | grep -q 'git@github.com'; then
-        # Determine current branch (e.g., main or production)
-        CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  # Must have an 'origin' remote.
+  if ! git remote get-url origin >/dev/null 2>&1; then
+    echo "🟡 No origin remote, skipping: $repo"
+    continue
+  fi
 
-        # Push to the detected branch (default: production if exists)
-        TARGET_BRANCH="production"
-        if ! git show-ref --verify --quiet "refs/heads/$TARGET_BRANCH"; then
-          TARGET_BRANCH="$CURRENT_BRANCH"
-          echo "Current Branch: ($CURRENT_BRANCH)"
-        fi
+  # Current branch (skip detached HEAD).
+  branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+  if [ -z "$branch" ] || [ "$branch" = "HEAD" ]; then
+    echo "🟡 Detached HEAD, skipping: $repo"
+    continue
+  fi
 
-        git push origin "$TARGET_BRANCH"
-        if [ $? -eq 0 ]; then
-          echo "✅ Changes pushed to GitHub ($TARGET_BRANCH) for $dir"
-        else
-          echo "❌ FAILED to push changes to GitHub ($TARGET_BRANCH) for $dir"
-          echo "   → Check SSH key and remote permissions"
-        fi
-      else
-        echo "🟡 No valid GitHub remote found in $dir, skipping."
-      fi
+  # Only push when there is actually something to push.
+  if git rev-parse --abbrev-ref --symbolic-full-name '@{upstream}' >/dev/null 2>&1; then
+    # Upstream exists: push only if we are ahead.
+    ahead="$(git rev-list --count '@{upstream}..HEAD' 2>/dev/null)"
+    if [ "${ahead:-0}" -eq 0 ]; then
+      echo "🟡 Nothing to push ($branch up to date): $repo"
+      continue
     fi
-  done
+  fi
+
+  if git push origin "$branch" >/dev/null 2>&1; then
+    echo "✅ Pushed $branch: $repo"
+  else
+    echo "❌ Push FAILED ($branch): $repo — check credentials/remote permissions"
+  fi
 done
 
-echo "----------------------------------------------------"
-echo "🎉 Auto Push Completed at $(date '+%Y-%m-%d %H:%M:%S')"
+echo "🎉 Auto-push finished at $(date '+%Y-%m-%d %H:%M:%S')"

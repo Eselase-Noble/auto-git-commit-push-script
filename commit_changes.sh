@@ -1,54 +1,49 @@
 #!/bin/bash
+#
+# Auto-commit script (macOS).
+# Discovers every git repo under $ROOT and commits any local changes.
+# Intended to be run on a schedule by launchd (see LaunchAgents/).
 
-# Directories to search for git repositories
-SEARCH_DIRS=(
-    "/home/nobleson/GLNS/PROJECTS"
-    "/home/nobleson/Projects/STARTUPS/Mobile Apps/React-Native"
-    "/home/nobleson/Projects/STARTUPS/Frontends"
-    "/home/nobleson/Projects/STARTUPS/Backends"
-    "/home/nobleson/Projects/STARTUPS/Assignment-Platform"
-    "/home/nobleson/Projects/STARTUPS/payment-voucher"
-    "/home/nobleson/Projects/STARTUPS/postmaster"
-    "/home/nobleson/Projects/STARTUPS/remote_web_based_ide"
-    "/home/nobleson/Projects/STARTUPS/"
-    "/home/nobleson/Projects/PERSONAL"
-    "/home/nobleson/Nobleson"
-    "/home/nobleson/SENDIT-GH"
-    "/home/nobleson/Projects/STARTUPS/AfrikodeLab"
-    "/home/nobleson/Projects/STARTUPS/AfrikodeLab/ERP-BACKEND"
-    "/home/nobleson/Projects/PERSONAL/AI"
-    "/home/nobleson/Projects/PERSONAL/AI/audio-transcription-system"
-    "/home/nobleson/Scripts"
-)
+# --- Environment (launchd runs with a minimal PATH) ---
+export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
-# Commit message with current date and time
+# Root under which to search for git repositories (override with AUTOGIT_ROOT).
+ROOT="${AUTOGIT_ROOT:-$HOME/Projects}"
+
+# Log file lives OUTSIDE the scanned repos so we never commit our own logs.
+LOG_DIR="$HOME/Library/Logs/auto-git"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/commit.log"
+exec >>"$LOG_FILE" 2>&1
+
 COMMIT_MESSAGE="Auto Commit: $(date '+%Y-%m-%d %H:%M:%S')"
 
-echo "Starting auto-commit process..."
+echo "===================================================="
+echo "=== Starting auto-commit at $(date '+%Y-%m-%d %H:%M:%S') ==="
+echo "Root: $ROOT"
 echo "Commit message: $COMMIT_MESSAGE"
 echo "----------------------------------------------------"
 
-# Loop through each base directory
-for BASE_DIR in "${SEARCH_DIRS[@]}"; do
-  echo "Searching in: $BASE_DIR"
+# Discover repos: find every .git directory, ignoring common vendored dirs.
+find "$ROOT" -type d \( \
+      -name node_modules -o -name vendor -o -name Pods -o -name .venv \
+      -o -name venv -o -name .tox -o -name DerivedData -o -name .next \
+      -o -name build -o -name dist \
+    \) -prune -o -type d -name .git -print 2>/dev/null | while IFS= read -r gitdir; do
 
-  # Loop through each subdirectory inside the base directory
-  for dir in "$BASE_DIR"/*; do
-    if [ -d "$dir/.git" ]; then
-      echo "→ Processing Git repository in: $dir"
-      cd "$dir" || continue
+  repo="$(dirname "$gitdir")"
+  cd "$repo" || continue
 
-      # Add and commit changes if any
-      git add .
-      if ! git diff --cached --quiet; then
-        git commit -m "$COMMIT_MESSAGE"
-        echo "✅ Changes committed in $dir"
-      else
-        echo "🟡 No changes detected in $dir"
-      fi
-      echo "----------------------------------------------------"
+  git add -A
+  if git diff --cached --quiet; then
+    echo "🟡 No changes: $repo"
+  else
+    if git commit -m "$COMMIT_MESSAGE" >/dev/null; then
+      echo "✅ Committed: $repo"
+    else
+      echo "❌ Commit FAILED: $repo"
     fi
-  done
+  fi
 done
 
-echo "🎉 All done!"
+echo "🎉 Auto-commit finished at $(date '+%Y-%m-%d %H:%M:%S')"
