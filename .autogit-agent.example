@@ -1,0 +1,8 @@
+# Copy this file to ".autogit-agent" (drop the .example) in the ROOT of any repo
+# you want the agent pipeline to fully process: commit → PR → review → merge.
+#
+# The file is sourced as shell, so it may be empty (use all defaults) or set:
+
+# BASE_BRANCH=main               # PR target; default = origin's default branch
+# MERGE_METHOD=squash            # squash | merge | rebase
+# CLAUDE_FLAGS="--dangerously-skip-permissions"   # how the headless agent runs

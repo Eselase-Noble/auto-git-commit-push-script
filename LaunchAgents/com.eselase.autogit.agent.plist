@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.eselase.autogit.agent</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/macbookpro/Projects/auto-git-commit-push-script/agent_pipeline.sh</string>
+    </array>
+
+    <!-- Once an hour, on the hour. The agent pipeline is heavier than the plain
+         commit/push jobs (it opens & merges PRs), so it runs less often. -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Minute</key><integer>15</integer></dict>
+    </array>
+
+    <!-- Do NOT run at load: this job merges PRs unattended; opt in explicitly. -->
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/macbookpro/Library/Logs/auto-git/agent.launchd.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/macbookpro/Library/Logs/auto-git/agent.launchd.log</string>
+</dict>
+</plist>
