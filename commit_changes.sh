@@ -1,28 +1,87 @@
 #!/bin/bash
 #
-# Auto-commit script (macOS).
-# Discovers every git repo under $ROOT and commits any local changes.
-# Intended to be run on a schedule by launchd (see LaunchAgents/).
+# Auto-commit script.
+# Discovers every git repo under $ROOT and commits any local changes, using an
+# agent-authored Conventional Commit message that describes the actual diff.
+# Falls back to a timestamp message if the agent is unavailable or errors.
+# Cross-platform: macOS/Linux natively, Windows via WSL or Git Bash.
+# Intended to be run on a schedule (launchd/cron/systemd — see SCHEDULING.md).
 
-# --- Environment (launchd runs with a minimal PATH) ---
-export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# --- Environment -------------------------------------------------------------
+# Schedulers run with a minimal PATH, so prepend common install locations
+# across macOS (Homebrew) and Linux; missing dirs are skipped.
+for d in /opt/homebrew/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin \
+         "$HOME/.local/bin" /home/linuxbrew/.linuxbrew/bin; do
+  [ -d "$d" ] && case ":$PATH:" in *":$d:"*) ;; *) PATH="$d:$PATH" ;; esac
+done
+export PATH
 
 # Root under which to search for git repositories (override with AUTOGIT_ROOT).
 ROOT="${AUTOGIT_ROOT:-$HOME/Projects}"
 
+# Flags for the headless agent (override with AUTOGIT_CLAUDE_FLAGS).
+CLAUDE_FLAGS="${AUTOGIT_CLAUDE_FLAGS:---dangerously-skip-permissions}"
+
 # Log file lives OUTSIDE the scanned repos so we never commit our own logs.
-LOG_DIR="$HOME/Library/Logs/auto-git"
+# OS-appropriate location; override with AUTOGIT_LOG_DIR.
+if [ -n "${AUTOGIT_LOG_DIR:-}" ]; then
+  LOG_DIR="$AUTOGIT_LOG_DIR"
+elif [ "$(uname -s)" = "Darwin" ]; then
+  LOG_DIR="$HOME/Library/Logs/auto-git"
+else
+  LOG_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/auto-git"
+fi
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/commit.log"
 exec >>"$LOG_FILE" 2>&1
 
-COMMIT_MESSAGE="Auto Commit: $(date '+%Y-%m-%d %H:%M:%S')"
+FALLBACK_MESSAGE="Auto Commit: $(date '+%Y-%m-%d %H:%M:%S')"
 
 echo "===================================================="
 echo "=== Starting auto-commit at $(date '+%Y-%m-%d %H:%M:%S') ==="
 echo "Root: $ROOT"
-echo "Commit message: $COMMIT_MESSAGE"
 echo "----------------------------------------------------"
+
+# Is the agent available for message generation?
+HAVE_CLAUDE=0
+command -v claude >/dev/null 2>&1 && HAVE_CLAUDE=1
+[ "$HAVE_CLAUDE" -eq 1 ] || echo "🟡 'claude' not found — using fallback timestamp messages."
+
+# Ask the agent to write a Conventional-Commits message for the STAGED diff.
+# Prints the message; falls back to the timestamp message on any failure.
+generate_commit_message() {
+  if [ "$HAVE_CLAUDE" -ne 1 ]; then
+    printf '%s\n' "$FALLBACK_MESSAGE"
+    return
+  fi
+  local diff prompt msg subject
+  diff="$(git diff --cached --stat; echo; git diff --cached | head -n 2000)"
+  prompt="Write a git commit message that accurately describes ONLY the actual
+changes in the diff below. Do not invent, assume, or generalize beyond what the
+diff shows. Read every hunk and summarize the real effect of the change.
+Rules:
+- Start the subject with a standard Conventional Commits type + colon:
+  feat: fix: docs: refactor: perf: test: chore: style: build: ci:
+  Pick the ONE type that best matches what the diff actually does.
+- Subject line <= 72 chars, imperative mood, no trailing period.
+- If several files/areas changed, add a blank line then bullet points ('- ...').
+- Output ONLY the commit message text. No code fences, no preamble, no quotes.
+
+--- staged changes ---
+$diff"
+  # shellcheck disable=SC2086
+  msg="$(claude -p "$prompt" $CLAUDE_FLAGS 2>/dev/null | sed '/^```/d' | sed '/./,$!d')"
+  if [ -z "$msg" ]; then
+    printf '%s\n' "$FALLBACK_MESSAGE"
+    return
+  fi
+  # Guarantee a standard type prefix even if the agent omitted one.
+  subject="$(printf '%s' "$msg" | head -n1)"
+  if ! printf '%s' "$subject" | grep -Eiq '^(feat|fix|docs|refactor|perf|test|chore|style|build|ci)(\(.+\))?!?:'; then
+    msg="chore: $msg"
+  fi
+  printf '%s\n' "$msg"
+}
 
 # Discover repos: find every .git directory, ignoring common vendored dirs.
 find "$ROOT" -type d \( \
@@ -38,7 +97,9 @@ find "$ROOT" -type d \( \
   if git diff --cached --quiet; then
     echo "🟡 No changes: $repo"
   else
-    if git commit -m "$COMMIT_MESSAGE" >/dev/null; then
+    msg="$(generate_commit_message)"
+    echo "📝 [$repo] $(printf '%s' "$msg" | head -n1)"
+    if git commit -m "$msg" >/dev/null; then
       echo "✅ Committed: $repo"
     else
       echo "❌ Commit FAILED: $repo"
