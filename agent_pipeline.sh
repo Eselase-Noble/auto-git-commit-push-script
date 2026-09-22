@@ -104,21 +104,31 @@ Rules:
 - Subject line <= 72 chars, imperative mood, no trailing period.
 - If several files/areas changed, add a blank line then bullet points ('- ...')
   describing each meaningful change.
-- Output ONLY the commit message text. No code fences, no preamble, no quotes.
+- The FIRST line of your output MUST be the subject line itself. Do NOT prefix
+  it with anything like 'Here is', 'The commit message:', quotes, or code fences.
 
 --- staged changes ---
 $diff"
-  # Run non-interactively; strip any stray code fences/blank leading lines.
-  msg="$(claude -p "$prompt" $flags 2>/dev/null | sed '/^```/d' | sed '/./,$!d')"
+  local raw n
+  # shellcheck disable=SC2086
+  raw="$(claude -p "$prompt" $flags 2>/dev/null | sed '/^```/d')"
+  # Prefer the first real Conventional-Commit line, dropping any preamble before
+  # it (e.g. "The commit message:"). Take from that line to the end.
+  n="$(printf '%s\n' "$raw" | grep -niE '^(feat|fix|docs|refactor|perf|test|chore|style|build|ci)(\(.+\))?!?:' | head -n1 | cut -d: -f1)"
+  if [ -n "$n" ]; then
+    msg="$(printf '%s\n' "$raw" | tail -n +"$n")"
+  else
+    # No typed line found: strip common preamble + leading blanks, keep the
+    # first meaningful line, and guarantee a standard prefix.
+    msg="$(printf '%s\n' "$raw" \
+            | sed -E '/^[[:space:]]*(sure|okay|ok|here.?s?( is| are)?|the commit message|commit message)[[:space:]:,.-]*$/Id' \
+            | sed '/./,$!d' | head -n1)"
+    [ -n "$msg" ] && msg="chore: $msg"
+  fi
+  # (git strips trailing blank lines from the message itself.)
   if [ -z "$msg" ]; then
     printf '%s\n' "$fallback"
     return
-  fi
-  # Guarantee a standard type prefix even if the agent omitted one.
-  local subject
-  subject="$(printf '%s' "$msg" | head -n1)"
-  if ! printf '%s' "$subject" | grep -Eiq '^(feat|fix|docs|refactor|perf|test|chore|style|build|ci)(\(.+\))?!?:'; then
-    msg="chore: $msg"
   fi
   printf '%s\n' "$msg"
 }
