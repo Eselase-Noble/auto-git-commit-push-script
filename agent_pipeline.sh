@@ -16,12 +16,21 @@
 # control.
 #
 # Requirements: git, gh (authenticated), claude, jq.
-# Intended to be run on-demand OR on a schedule by launchd (see LaunchAgents/).
+# Cross-platform: works on macOS and Linux natively, and on Windows via WSL or
+# Git Bash. See SCHEDULING.md for per-OS scheduler setup (launchd/cron/systemd/
+# Task Scheduler).
 
 set -uo pipefail
 
-# --- Environment (launchd runs with a minimal PATH) ---
-export PATH="/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# --- Environment -------------------------------------------------------------
+# Schedulers (launchd/cron) run with a minimal PATH, so prepend the common
+# install locations across macOS (Homebrew) and Linux. Missing dirs are
+# harmless; the caller's PATH is preserved at the end.
+for d in /opt/homebrew/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin \
+         "$HOME/.local/bin" /home/linuxbrew/.linuxbrew/bin; do
+  [ -d "$d" ] && case ":$PATH:" in *":$d:"*) ;; *) PATH="$d:$PATH" ;; esac
+done
+export PATH
 
 # Root under which to search for git repositories (override with AUTOGIT_ROOT).
 ROOT="${AUTOGIT_ROOT:-$HOME/Projects}"
@@ -34,7 +43,14 @@ DEFAULT_MERGE_METHOD="${AUTOGIT_MERGE_METHOD:-squash}"
 DEFAULT_CLAUDE_FLAGS="${AUTOGIT_CLAUDE_FLAGS:---dangerously-skip-permissions}"
 
 # Log file lives OUTSIDE the scanned repos so we never commit our own logs.
-LOG_DIR="$HOME/Library/Logs/auto-git"
+# Pick an OS-appropriate location (override with AUTOGIT_LOG_DIR).
+if [ -n "${AUTOGIT_LOG_DIR:-}" ]; then
+  LOG_DIR="$AUTOGIT_LOG_DIR"
+elif [ "$(uname -s)" = "Darwin" ]; then
+  LOG_DIR="$HOME/Library/Logs/auto-git"          # macOS convention
+else
+  LOG_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/auto-git"   # Linux/WSL/XDG
+fi
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/agent-pipeline.log"
 exec >>"$LOG_FILE" 2>&1
